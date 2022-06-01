@@ -27,7 +27,7 @@
     "serialport": "^10.4.0"
   },
   "devDependencies": {
-    "@iobroker/testing": "^2.6.0",
+    "@iobroker/testing": "^3.0.2",
     "@serialport/binding-mock": "^10.2.2",
     "@serialport/stream": "^10.3.0",
     "@types/chai": "^4.3.1",
