@@ -29,7 +29,7 @@
   "devDependencies": {
     "@iobroker/testing": "^4.1.0",
     "@serialport/binding-mock": "^10.2.2",
-    "@serialport/stream": "^10.3.0",
+    "@serialport/stream": "^10.5.0",
     "@types/chai": "^4.3.3",
     "@types/gulp": "^4.0.9",
     "@types/mocha": "^9.1.1",
