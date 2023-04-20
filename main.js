@@ -42,6 +42,9 @@ class WirelessMbus extends utils.Adapter {
 
         this.receivers = {};
 
+        this.receiverSettings = null;
+        this.reconnectAttempt = 0;
+
         this.connected = false;
         this.receiver = null;
         this.decoder = null;
@@ -103,8 +106,14 @@ class WirelessMbus extends utils.Adapter {
             });
         }
 
-        this.receivers = this.getReceivers();
         this.setConnected(false);
+        this.setReceiverSettings();
+
+        await this.setupReceiver();
+    }
+
+    setReceiverSettings() {
+        this.receivers = this.getReceivers();
 
         const port = (typeof this.config.serialPort !== 'undefined' ? this.config.serialPort : '/dev/ttyWMBUS');
         // @ts-ignore
@@ -117,15 +126,29 @@ class WirelessMbus extends utils.Adapter {
         const receiverName = this.getReceiverName(this.config.deviceType);
         const receiverJs = `.${receiverPath}${receiverClass}`;
 
+        this.receiverSettings = {
+            name: receiverName,
+            mode: mode,
+            options: options,
+            class: receiverClass,
+            source: receiverJs
+        };
+    }
+
+    async setupReceiver() {
+        if (this.receiverSettings === null) {
+            throw new Error('No receiverSettings? Something went wrong...');
+        }
+
         try {
-            if (fs.existsSync(receiverJs)) {
-                ReceiverModule = require(receiverJs);
-                this.receiver = new ReceiverModule(options, mode, this.dataReceived.bind(this), this.serialError.bind(this), {
+            if (fs.existsSync(this.receiverSettings.source)) {
+                ReceiverModule = require(this.receiverSettings.source);
+                this.receiver = new ReceiverModule(this.receiverSettings.options, this.receiverSettings.mode, this.dataReceived.bind(this), this.serialError.bind(this), {
                     debug: this.log.debug,
                     info: this.log.info,
                     error: this.log.error
                 });
-                this.log.debug(`Created device of type: ${receiverName}`);
+                this.log.debug(`Created device of type: ${this.receiverSettings.name}`);
 
                 this.decoder = new WMBusDecoder({
                     debug: this.log.debug,
@@ -134,11 +157,12 @@ class WirelessMbus extends utils.Adapter {
 
                 await this.receiver.init();
                 this.setConnected(true);
+                this.reconnectAttempt = 0;
             } else {
-                this.log.error(`No or unknown adapter type selected! ${receiverClass}`);
+                this.log.error(`No or unknown adapter type selected! ${this.receiverSettings.class}`);
             }
         } catch (e) {
-            this.log.error(`Error opening serial port ${port} with baudrate ${baud}`);
+            this.log.error(`Error opening serial connection ${JSON.stringify(this.receiverSettings.options)}`);
             // @ts-ignore
             this.log.error(e);
             this.setConnected(false);
@@ -189,9 +213,18 @@ class WirelessMbus extends utils.Adapter {
     }
 
     serialError(err) {
-        this.log.error(`Serialport error: ${err.message}`);
+        this.log.error(`Serial connection error: ${err.message}`);
         this.setConnected(false);
         this.onUnload();
+
+        if (this.reconnectAttempt < 4) {
+            this.reconnectAttempt++;
+            this.setTimeout(() => this.setupReceiver(), 30000);
+            this.log.info('Attempting new connection in 30 seconds.');
+        } else if (this.reconnectAttempt == 4) {
+            this.reconnectAttempt++;
+            this.log.info('Reconnect attempts have been exhausted.');
+        }
     }
 
     setConnected(isConnected) {
