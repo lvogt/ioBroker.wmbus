@@ -33,7 +33,7 @@
     "@types/chai": "^4.3.5",
     "@types/gulp": "^4.0.13",
     "@types/mocha": "^10.0.1",
-    "@types/node": "^20.3.3",
+    "@types/node": "^20.4.5",
     "axios": "^1.4.0",
     "chai": "^4.3.7",
     "eslint": "^8.46.0",
