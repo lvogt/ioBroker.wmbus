@@ -1,10 +1,10 @@
 {
     "common": {
         "name": "wireless-mbus",
-        "version": "0.9.2",
+        "version": "0.9.3",
         "news": {
-            "0.9.2": {
-                "en": "Fix handling of frame type B without CRC"
+            "0.9.3": {
+                "en": "Fix handling of frame type B without CRC and of 64bit integer DIFs"
             },
             "0.9.1": {
                 "en": "Fix custom port display in admin page if SerialPort returns no ports"
@@ -21,29 +21,8 @@
             "0.8.8": {
                 "en": "Add datetime type I handling"
             },
-            "0.8.7": {
-                "en": "Slightly improve handling of LVAR DIF values"
-            },
             "0.8.6": {
                 "en": "Minor fix"
-            },
-            "0.8.5": {
-                "en": "Minor fix"
-            },
-            "0.8.4": {
-                "en": "Minor fix"
-            },
-            "0.8.3": {
-                "en": "Minor changes - Github CI no longer runs with NodeJS12!"
-            },
-            "0.8.2": {
-                "en": "C-mode support for CUL"
-            },
-            "0.8.1": {
-                "en": "Small bugfix"
-            },
-            "0.8.0": {
-                "en": "Rewrite of serial communication"
             }
         },
         "titleLang": {
@@ -58,7 +37,6 @@
             "pl": "Wireless M-Bus",
             "zh-cn": "Wireless M-Bus"
         },
-        "title": "Wireless M-Bus",
         "desc": {
             "en": "Receive data from Wireless Meter-Bus (wM-Bus) devices like gas or electricity meters",
             "de": "Empfange Daten von Wireless Meter-Bus (wM-Bus) Geräten (zB Gas- oder Stromzähler)",
@@ -74,10 +52,13 @@
         "authors": [
             "Christian Landvogt <chris@lvgt.de>"
         ],
-        "keywords": ["iobroker", "wmbus", "measure", "mbus", "wireless", "meter", "oms"],
-        "license": "GPL-2.0-only",
+        "keywords": ["wmbus", "measure", "mbus", "wireless", "meter", "oms"],
+        "licenseInformation": {
+            "type": "free",
+            "license": "GPL-2.0-only"
+        },
         "platform": "Javascript/Node.js",
-        "main": "main.js",
+        "tier": 1,
         "icon": "wireless-mbus.png",
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/lvogt/ioBroker.wireless-mbus/master/admin/wireless-mbus.png",
@@ -90,7 +71,7 @@
         "dataSource": "push",
         "materialize": true,
         "messagebox": true,
-        "dependencies": [{ "js-controller": ">=2.0.0" }]
+        "dependencies": [{ "js-controller": ">=4.0.24" }]
     },
     "native": {
         "deviceType": "amber",

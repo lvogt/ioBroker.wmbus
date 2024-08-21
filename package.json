@@ -1,6 +1,6 @@
 {
   "name": "iobroker.wireless-mbus",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Receive data from Wireless Meter-Bus (wM-Bus) devices like gas or electricity meters",
   "author": {
     "name": "Christian Landvogt",
@@ -10,6 +10,7 @@
   "license": "GPL-2.0-only",
   "keywords": [
     "iobroker",
+    "ioBroker",
     "wmbus",
     "measure",
     "mbus",
@@ -17,6 +18,9 @@
     "meter",
     "oms"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lvogt/ioBroker.wireless-mbus.git"
