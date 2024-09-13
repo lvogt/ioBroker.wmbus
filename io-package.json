@@ -5,31 +5,94 @@
     "news": {
       "0.9.4": {
         "en": "Upgrade dependencies; some fixes to quiet the adapter checker bot",
-        "de": "Upgrade der Abhängigkeiten; einige Anpassungen um den Adapter Checker Bot ruhigzustellen"
+        "de": "Upgrade der Abhängigkeiten; einige Anpassungen um den Adapter Checker Bot ruhigzustellen",
+        "ru": "Обновление зависимостей; некоторые исправления для отключения бота проверки адаптера",
+        "pt": "Atualizar dependências; algumas correções para silenciar o bot verificador do adaptador",
+        "nl": "Upgrade-afhankelijkheden; enkele oplossingen om de adapterchecker-bot stil te maken",
+        "fr": "Dépendances de mise à niveau ; quelques correctifs pour faire taire le bot vérificateur d'adaptateur",
+        "it": "Aggiornare le dipendenze; alcune correzioni per silenziare il bot di controllo dell'adattatore",
+        "es": "Actualizar dependencias; algunas correcciones para silenciar el robot verificador de adaptadores",
+        "pl": "Zależności aktualizacji; kilka poprawek wyciszających bota sprawdzającego adapter",
+        "uk": "Оновити залежності; деякі виправлення, щоб заглушити роботу бота перевірки адаптера",
+        "zh-cn": "升级依赖；一些修复以安静适配器检查机器人"
       },
       "0.9.3": {
         "en": "Fix handling of frame type B without CRC and of 64bit integer DIFs",
-        "de": "Korrektur bei der Behandlung von Typ B Telegrammen ohne CRC und bei 64bit Integer DIFs"
+        "de": "Korrektur bei der Behandlung von Typ B Telegrammen ohne CRC und bei 64bit Integer DIFs",
+        "ru": "Исправлена ​​обработка кадров типа B без CRC и 64-битных целочисленных DIF.",
+        "pt": "Corrigido o tratamento de quadro tipo B sem CRC e de DIFs inteiros de 64 bits",
+        "nl": "Probleem opgelost met de afhandeling van frametype B zonder CRC en van 64bit integer DIF's",
+        "fr": "Correction de la gestion des trames de type B sans CRC et des DIF entiers 64 bits",
+        "it": "Corretta la gestione del frame di tipo B senza CRC e dei DIF interi a 64 bit",
+        "es": "Se corrigió el manejo de trama tipo B sin CRC y de DIF enteros de 64 bits.",
+        "pl": "Naprawiono obsługę ramki typu B bez CRC i 64-bitowych liczb całkowitych DIF",
+        "uk": "Виправлено обробку кадру типу B без CRC і 64-бітних цілих DIF",
+        "zh-cn": "修复了不带 CRC 的帧类型 B 和 64 位整数 DIF 的处理"
       },
       "0.9.1": {
         "en": "Fix custom port display in admin page if SerialPort returns no ports",
-        "de": "Korrektur der Anzeige des benutzerdefinierten Ports falls SerialPort keine Ports findet"
+        "de": "Korrektur der Anzeige des benutzerdefinierten Ports falls SerialPort keine Ports findet",
+        "ru": "Исправлено отображение пользовательского порта на странице администратора, если SerialPort не возвращает порты.",
+        "pt": "Corrigida a exibição de porta personalizada na página de administração se SerialPort não retornar nenhuma porta",
+        "nl": "Aangepaste poortweergave op de beheerderspagina repareren als SerialPort geen poorten retourneert",
+        "fr": "Correction de l'affichage du port personnalisé dans la page d'administration si SerialPort ne renvoie aucun port",
+        "it": "Correggi la visualizzazione della porta personalizzata nella pagina di amministrazione se SerialPort non restituisce porte",
+        "es": "Se corrigió la visualización del puerto personalizado en la página de administración si SerialPort no devuelve ningún puerto.",
+        "pl": "Napraw niestandardowe wyświetlanie portów na stronie administratora, jeśli SerialPort nie zwraca żadnych portów",
+        "uk": "Виправте відображення спеціального порту на сторінці адміністратора, якщо SerialPort не повертає жодного порту",
+        "zh-cn": "如果 SerialPort 未返回任何端口，则修复管理页面中的自定义端口显示"
       },
       "0.9.0": {
         "en": "Implement serial over TCP; upgrade to serialport 11; at least node v14 required!",
-        "de": "Unterstützung für Serial over TCP; Upgrade von SerialPort auf v11; Node v14 wird mindestens benötigt!"
+        "de": "Unterstützung für Serial over TCP; Upgrade von SerialPort auf v11; Node v14 wird mindestens benötigt!",
+        "ru": "Реализуйте последовательный порт через TCP; обновление до последовательного порта 11; требуется как минимум узел v14!",
+        "pt": "Implementar serial sobre TCP; atualize para porta serial 11; pelo menos o nó v14 é necessário!",
+        "nl": "Implementeer serieel via TCP; upgrade naar seriële poort 11; minimaal knooppunt v14 vereist!",
+        "fr": "Implémenter la série sur TCP ; mise à niveau vers le port série 11 ; au moins le nœud v14 requis !",
+        "it": "Implementare la porta seriale su TCP; aggiornamento alla porta seriale 11; è richiesto almeno il nodo v14!",
+        "es": "Implementar serie sobre TCP; actualizar al puerto serie 11; ¡Se requiere al menos el nodo v14!",
+        "pl": "Zaimplementuj połączenie szeregowe przez TCP; aktualizacja do portu szeregowego 11; wymagany jest co najmniej węzeł v14!",
+        "uk": "Реалізація послідовного порту TCP; оновлення до послідовного порту 11; потрібен принаймні вузол v14!",
+        "zh-cn": "通过TCP实现串行；升级到串口11；至少需要节点 v14！"
       },
       "0.8.10": {
         "en": "Use compact frame cache independently from manufacturer code",
-        "de": "Cache für Kompakttelegramme wird unabhängig vom Hersteller verwendet"
+        "de": "Cache für Kompakttelegramme wird unabhängig vom Hersteller verwendet",
+        "ru": "Используйте компактный кэш кадров независимо от кода производителя.",
+        "pt": "Use cache de quadro compacto independentemente do código do fabricante",
+        "nl": "Gebruik compacte framecache onafhankelijk van de fabrikantcode",
+        "fr": "Utiliser le cache de trame compact indépendamment du code du fabricant",
+        "it": "Utilizza la cache dei frame compatta indipendentemente dal codice del produttore",
+        "es": "Utilice caché de fotogramas compacto independientemente del código del fabricante",
+        "pl": "Używaj kompaktowej pamięci podręcznej ramki niezależnie od kodu producenta",
+        "uk": "Використовуйте компактний кеш кадрів незалежно від коду виробника",
+        "zh-cn": "独立于制造商代码使用紧凑帧缓存"
       },
       "0.8.9": {
         "en": "Fix display of non-default settings in admin page",
-        "de": "Korrekter der Anzeige mancher Werte in der AdminUI"
+        "de": "Korrekter der Anzeige mancher Werte in der AdminUI",
+        "ru": "Исправлено отображение нестандартных настроек на странице администратора.",
+        "pt": "Corrigida a exibição de configurações não padrão na página de administração",
+        "nl": "Weergave van niet-standaardinstellingen op de beheerderspagina opgelost",
+        "fr": "Correction de l'affichage des paramètres autres que ceux par défaut dans la page d'administration",
+        "it": "Corretta la visualizzazione delle impostazioni non predefinite nella pagina di amministrazione",
+        "es": "Se corrigió la visualización de configuraciones no predeterminadas en la página de administración",
+        "pl": "Napraw wyświetlanie ustawień innych niż domyślne na stronie administratora",
+        "uk": "Виправлено відображення нестандартних налаштувань на сторінці адміністратора",
+        "zh-cn": "修复管理页面中非默认设置的显示"
       },
       "0.8.8": {
         "en": "Add datetime type I handling",
-        "de": "Unterstützung für Typ I Zeitstempel"
+        "de": "Unterstützung für Typ I Zeitstempel",
+        "ru": "Добавить обработку даты и времени типа I",
+        "pt": "Adicionar tratamento de data e hora tipo I",
+        "nl": "Voeg datetime type I-verwerking toe",
+        "fr": "Ajouter la gestion datetime type I",
+        "it": "Aggiungi la gestione del tipo I di data e ora",
+        "es": "Agregar manejo de fecha y hora tipo I",
+        "pl": "Dodaj obsługę typu datetime I",
+        "uk": "Додайте обробку типу дата-час I",
+        "zh-cn": "添加日期时间类型 I 处理"
       }
     },
     "titleLang": {

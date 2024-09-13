@@ -1,0 +1,19 @@
+{
+    "AES key": "Ключ AES",
+    "AES keys": "Ключі AES",
+    "Blocked Devices": "Заблоковані пристрої",
+    "Cache for compact frames support": "Кеш для підтримки компактних кадрів",
+    "Custom serial port": "Спеціальний послідовний порт",
+    "Device address": "Адреса пристрою",
+    "Force energy units to kWh": "Примусово перевести одиниці енергії в кВт/год",
+    "ID": "ID",
+    "Options": "Налаштування",
+    "Select port": "Виберіть порт",
+    "Temporarily block device after consecutive failures": "Тимчасово блокувати пристрій після послідовних збоїв",
+    "Update unchanged states": "Оновити незмінні стани",
+    "customPortSelect": "Спеціальний порт (див. нижче)",
+    "serialBaudRate": "Послідовна швидкість передачі даних",
+    "serialPort": "Послідовний порт",
+    "wMBus Mode": "Режим wMBus",
+    "wMBus Receiver": "Приймач wMBus"
+}
