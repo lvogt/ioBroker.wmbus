@@ -1,125 +1,147 @@
 {
-    "common": {
-        "name": "wireless-mbus",
-        "version": "0.9.3",
-        "news": {
-            "0.9.3": {
-                "en": "Fix handling of frame type B without CRC and of 64bit integer DIFs"
-            },
-            "0.9.1": {
-                "en": "Fix custom port display in admin page if SerialPort returns no ports"
-            },
-            "0.9.0": {
-                "en": "Implement serial over TCP; upgrade to serialport 11; at least node v14 required!"
-            },
-            "0.8.10": {
-                "en": "Use compact frame cache independently from manufacturer code"
-            },
-            "0.8.9": {
-                "en": "Fix display of non-default settings in admin page"
-            },
-            "0.8.8": {
-                "en": "Add datetime type I handling"
-            },
-            "0.8.6": {
-                "en": "Minor fix"
-            }
-        },
-        "titleLang": {
-            "en": "Wireless M-Bus",
-            "de": "Wireless M-Bus",
-            "ru": "Wireless M-Bus",
-            "pt": "Wireless M-Bus",
-            "nl": "Wireless M-Bus",
-            "fr": "Wireless M-Bus",
-            "it": "Wireless M-Bus",
-            "es": "Wireless M-Bus",
-            "pl": "Wireless M-Bus",
-            "zh-cn": "Wireless M-Bus"
-        },
-        "desc": {
-            "en": "Receive data from Wireless Meter-Bus (wM-Bus) devices like gas or electricity meters",
-            "de": "Empfange Daten von Wireless Meter-Bus (wM-Bus) Geräten (zB Gas- oder Stromzähler)",
-            "ru": "Получение данных от устройств Wireless Meter-Bus (wM-Bus), таких как счетчики газа или электроэнергии",
-            "pt": "Receber dados de dispositivos Wireless Meter-Bus (wM-Bus), como medidores de gás ou eletricidade",
-            "nl": "Gegevens ontvangen van Wireless Meter-Bus (wM-Bus) apparaten zoals gas- of elektriciteitsmeters",
-            "fr": "Recevoir des données d'appareils Wireless Meter-Bus (wM-Bus) comme des compteurs de gaz ou d'électricité",
-            "it": "Ricevi dati da dispositivi Wireless Meter-Bus (wM-Bus) come contatori di gas o elettricità",
-            "es": "Reciba datos de dispositivos Wireless Meter-Bus (wM-Bus) como medidores de gas o electricidad",
-            "pl": "Odbieraj dane z urządzeń Wireless Meter-Bus (wM-Bus), takich jak liczniki gazu lub energii elektrycznej",
-            "zh-cn": "从无线仪表总线 (wM-Bus) 设备（如燃气表或电表）接收数据"
-        },
-        "authors": [
-            "Christian Landvogt <chris@lvgt.de>"
-        ],
-        "keywords": ["wmbus", "measure", "mbus", "wireless", "meter", "oms"],
-        "licenseInformation": {
-            "type": "free",
-            "license": "GPL-2.0-only"
-        },
-        "platform": "Javascript/Node.js",
-        "tier": 1,
-        "icon": "wireless-mbus.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/lvogt/ioBroker.wireless-mbus/master/admin/wireless-mbus.png",
-        "readme": "https://github.com/lvogt/ioBroker.wireless-mbus/blob/master/README.md",
-        "loglevel": "info",
-        "mode": "daemon",
-        "type": "energy",
-        "compact": true,
-        "connectionType": "local",
-        "dataSource": "push",
-        "materialize": true,
-        "messagebox": true,
-        "dependencies": [{ "js-controller": ">=4.0.24" }]
+  "common": {
+    "name": "wireless-mbus",
+    "version": "0.9.4",
+    "news": {
+      "0.9.4": {
+        "en": "Upgrade dependencies; some fixes to quiet the adapter checker bot",
+        "de": "Upgrade der Abhängigkeiten; einige Anpassungen um den Adapter Checker Bot ruhigzustellen"
+      },
+      "0.9.3": {
+        "en": "Fix handling of frame type B without CRC and of 64bit integer DIFs",
+        "de": "Korrektur bei der Behandlung von Typ B Telegrammen ohne CRC und bei 64bit Integer DIFs"
+      },
+      "0.9.1": {
+        "en": "Fix custom port display in admin page if SerialPort returns no ports",
+        "de": "Korrektur der Anzeige des benutzerdefinierten Ports falls SerialPort keine Ports findet"
+      },
+      "0.9.0": {
+        "en": "Implement serial over TCP; upgrade to serialport 11; at least node v14 required!",
+        "de": "Unterstützung für Serial over TCP; Upgrade von SerialPort auf v11; Node v14 wird mindestens benötigt!"
+      },
+      "0.8.10": {
+        "en": "Use compact frame cache independently from manufacturer code",
+        "de": "Cache für Kompakttelegramme wird unabhängig vom Hersteller verwendet"
+      },
+      "0.8.9": {
+        "en": "Fix display of non-default settings in admin page",
+        "de": "Korrekter der Anzeige mancher Werte in der AdminUI"
+      },
+      "0.8.8": {
+        "en": "Add datetime type I handling",
+        "de": "Unterstützung für Typ I Zeitstempel"
+      }
     },
-    "native": {
-        "deviceType": "amber",
-        "serialPort": "/dev/ttyWMBUS",
-        "wmbusMode": "T",
-        "serialBaudRate": 9600,
-        "alwaysUpdate": true,
-        "drCacheEnabled": false,
-        "forcekWh": false,
-        "autoBlocklist": true,
-        "aeskeys": [],
-        "blacklist": []
+    "titleLang": {
+      "en": "Wireless M-Bus",
+      "de": "Wireless M-Bus",
+      "ru": "Wireless M-Bus",
+      "pt": "Wireless M-Bus",
+      "nl": "Wireless M-Bus",
+      "fr": "Wireless M-Bus",
+      "it": "Wireless M-Bus",
+      "es": "Wireless M-Bus",
+      "pl": "Wireless M-Bus",
+      "uk": "Wireless M-Bus",
+      "zh-cn": "Wireless M-Bus"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id":  "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id":  "info.connection",
-            "type": "state",
-            "common": {
-                "role":  "indicator.connected",
-                "name":  "If connected to wM-Bus receiver",
-                "type":  "boolean",
-                "read":  true,
-                "write": false,
-                "def":   false
-            },
-            "native": {}
-        },
-        {
-            "_id":  "info.rawdata",
-            "type": "state",
-            "common": {
-                "role":  "value",
-                "name":  "Telegram raw data if parser failed",
-                "type":  "string",
-                "read":  true,
-                "write": false,
-                "def":   ""
-            },
-            "native": {}
-        }
+    "desc": {
+      "en": "Receive data from Wireless Meter-Bus (wM-Bus) devices like gas or electricity meters",
+      "de": "Empfange Daten von Wireless Meter-Bus (wM-Bus) Geräten (zB Gas- oder Stromzähler)",
+      "ru": "Получение данных от устройств Wireless Meter-Bus (wM-Bus), таких как счетчики газа или электроэнергии",
+      "uk": "Отримуйте дані з пристроїв Wireless Meter-Bus (wM-Bus), таких як лічильники газу або електроенергії",
+      "pt": "Receber dados de dispositivos Wireless Meter-Bus (wM-Bus), como medidores de gás ou eletricidade",
+      "nl": "Gegevens ontvangen van Wireless Meter-Bus (wM-Bus) apparaten zoals gas- of elektriciteitsmeters",
+      "fr": "Recevoir des données d'appareils Wireless Meter-Bus (wM-Bus) comme des compteurs de gaz ou d'électricité",
+      "it": "Ricevi dati da dispositivi Wireless Meter-Bus (wM-Bus) come contatori di gas o elettricità",
+      "es": "Reciba datos de dispositivos Wireless Meter-Bus (wM-Bus) como medidores de gas o electricidad",
+      "pl": "Odbieraj dane z urządzeń Wireless Meter-Bus (wM-Bus), takich jak liczniki gazu lub energii elektrycznej",
+      "zh-cn": "从无线仪表总线 (wM-Bus) 设备（如燃气表或电表）接收数据"
+    },
+    "authors": [
+      "Christian Landvogt <chris@lvgt.de>"
+    ],
+    "keywords": [
+      "wmbus",
+      "measure",
+      "mbus",
+      "wireless",
+      "meter",
+      "oms"
+    ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "GPL-2.0-only"
+    },
+    "platform": "Javascript/Node.js",
+    "tier": 1,
+    "icon": "wireless-mbus.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/lvogt/ioBroker.wireless-mbus/master/admin/wireless-mbus.png",
+    "readme": "https://github.com/lvogt/ioBroker.wireless-mbus/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "energy",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "materialize"
+    },
+    "messagebox": true,
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.19"
+      }
     ]
+  },
+  "native": {
+    "deviceType": "amber",
+    "serialPort": "/dev/ttyWMBUS",
+    "wmbusMode": "T",
+    "serialBaudRate": 9600,
+    "alwaysUpdate": true,
+    "drCacheEnabled": false,
+    "forcekWh": false,
+    "autoBlocklist": true,
+    "aeskeys": [],
+    "blacklist": []
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "If connected to wM-Bus receiver",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.rawdata",
+      "type": "state",
+      "common": {
+        "role": "value",
+        "name": "Telegram raw data if parser failed",
+        "type": "string",
+        "read": true,
+        "write": false,
+        "def": ""
+      },
+      "native": {}
+    }
+  ]
 }
